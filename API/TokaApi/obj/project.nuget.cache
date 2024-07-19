@@ -1,0 +1,27 @@
+{
+  "version": 2,
+  "dgSpecHash": "sdwqt24kja4DqIj9z3FNcKR/36PkeU4C9aB8rbUgWlAAqFWRNWHrEx6F8j6VN1rqmd+P1cDr1H3YjuuFjmohgg==",
+  "success": false,
+  "projectFilePath": "C:\\Users\\Omega\\Desktop\\Toka_Test\\TEST_DEV_LFMO_19072024\\API\\TokaApi\\TokaApi.csproj",
+  "expectedPackageFiles": [],
+  "logs": [
+    {
+      "code": "NU1101",
+      "level": "Error",
+      "message": "No se encuentra el paquete Microsoft.AspNetCore.OpenApi. No existe ningún paquete con este id. en los orígenes: Microsoft Visual Studio Offline Packages",
+      "libraryId": "Microsoft.AspNetCore.OpenApi",
+      "targetGraphs": [
+        "net7.0"
+      ]
+    },
+    {
+      "code": "NU1101",
+      "level": "Error",
+      "message": "No se encuentra el paquete Swashbuckle.AspNetCore. No existe ningún paquete con este id. en los orígenes: Microsoft Visual Studio Offline Packages",
+      "libraryId": "Swashbuckle.AspNetCore",
+      "targetGraphs": [
+        "net7.0"
+      ]
+    }
+  ]
+}
