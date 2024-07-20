@@ -6,17 +6,23 @@ import { AppComponent } from './app.component';
 import { LogInComponent } from './log-in/log-in.component';
 import { PersonasFisicasComponent } from './personas-fisicas/personas-fisicas.component';
 import { ReportesComponent } from './reportes/reportes.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HeaderComponent } from './header/header.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LogInComponent,
     PersonasFisicasComponent,
-    ReportesComponent
+    ReportesComponent,
+    HeaderComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgbModule
   ],
   providers: [
     provideClientHydration()
