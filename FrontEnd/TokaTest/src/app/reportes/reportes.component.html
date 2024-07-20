@@ -1,1 +1,15 @@
 <app-header></app-header>
+
+<div style="height: 100%;" class="example-wrapper">
+    <ag-grid-angular
+    style="width: 100%;position: fixed; height: calc(100% - 190px);font-size: 14px;text-align: center !important;"
+    class="ag-theme-alpine"
+    [pagination]="true"
+    [paginationPageSize] ="20"
+    [rowSelection]="rowSelection"
+    [columnDefs]="columnDefs"
+    [defaultColDef]="defaultColDef"
+    [rowData]="rowData"
+    (gridReady)="onGridReady($event)"
+/>
+</div>
