@@ -4,15 +4,15 @@ using System.Data;
 
 namespace TokaApi.Controllers;
 
-[ApiController]
 [Route("api/[controller]")]
+[ApiController]
 public class PersonaFisica : ControllerBase
 {
     
-    Util.SQLHandler db = new Util.SQLHandler("Default");
+    Util.SQLHandler db = new Util.SQLHandler();
 
     public PersonaFisica(){
-        db.SetConnectionStringFromAppSettingsFile("Default");
+        db.SetConnectionStringFromAppSettingsFile("Default1");
     }
    
 
@@ -43,7 +43,7 @@ public class PersonaFisica : ControllerBase
 
     [HttpGet]
     [Route("ObtenerPersonasFisicas")]
-    public IActionResult ObtenerPersonasFisicas([FromBody] PersonaFisicaModel requestModel)
+    public IActionResult ObtenerPersonasFisicas()
     {
         var grm = new GenericResponseModel();
 
