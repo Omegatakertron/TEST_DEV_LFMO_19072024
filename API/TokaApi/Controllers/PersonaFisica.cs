@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using TokaApi.Models;
 using System.Data;
+using Util;
+using System.Data.SqlClient;
 
 namespace TokaApi.Controllers;
 
@@ -9,40 +11,44 @@ namespace TokaApi.Controllers;
 public class PersonaFisica : ControllerBase
 {
     
-    Util.SQLHandler db = new Util.SQLHandler();
+    private readonly SQLHandler db;
 
     public PersonaFisica(){
-        db.SetConnectionStringFromAppSettingsFile("Default1");
+        var connectionString = AppSettingsHandler.GetConnectionString("Default1");
+        db = new SQLHandler(connectionString);
     }
    
 
-    [HttpPost]
-    [Route("RegistrarPersonaFisica")]
+    [HttpPost("RegistrarPersonaFisica")]
     public IActionResult RegistrarPersonaFisica([FromBody] PersonaFisicaModel requestModel)
     {
         var grm = new GenericResponseModel();
 
         try
         {
-            grm.Data = db.GetDataTable("dbo.sp_AgregarPersonaFisica",requestModel.Nombre, requestModel.ApellidoPaterno, requestModel.ApellidoMaterno, requestModel.rfc, requestModel.FechaNacimiento, requestModel.UsuarioAgrega);
+              db.ExecStoredProcedure("dbo.sp_AgregarPersonaFisica", new List<SqlParameter>
+                {
+                    new SqlParameter("@Nombre", requestModel.Nombre),
+                    new SqlParameter("@ApellidoPaterno", requestModel.ApellidoPaterno),
+                    new SqlParameter("@ApellidoMaterno", requestModel.ApellidoMaterno),
+                    new SqlParameter("@RFC", requestModel.rfc),
+                    new SqlParameter("@FechaNacimiento", requestModel.FechaNacimiento),
+                    new SqlParameter("@UsuarioAgrega", requestModel.UsuarioAgrega)
+                });
             grm.Success = true;
-            grm.Message = string.Empty;
+            grm.Message = "Persona Fisica registrada existosamente";
         }
         catch (Exception ex)
         {
-            grm.Data = new DataTable();
             grm.Success = false;
-            grm.Message = ex.Message;
-
-            return BadRequest(grm);
+            grm.Message = "Ocurrió un error al registrar la persona física.";
+            return StatusCode(StatusCodes.Status500InternalServerError, grm);
         }
-
 
         return Ok(grm);
     }
 
-    [HttpGet]
-    [Route("ObtenerPersonasFisicas")]
+    [HttpGet("ObtenerPersonasFisicas")]
     public IActionResult ObtenerPersonasFisicas()
     {
         var grm = new GenericResponseModel();
@@ -66,17 +72,25 @@ public class PersonaFisica : ControllerBase
         return Ok(grm);
     }
 
-    [HttpPut]
-    [Route("ActualizarPersonaFisica")]
+    [HttpPut("ActualizarPersonaFisica")]
     public IActionResult ActualizarPersonaFisica([FromBody] PersonaFisicaModel requestModel)
     {
         var grm = new GenericResponseModel();
 
         try
         {
-            grm.Data = db.GetDataTable("dbo.sp_ActualizarPersonaFisica", requestModel.idPersonaFisica, requestModel.Nombre, requestModel.ApellidoPaterno, requestModel.ApellidoMaterno, requestModel.rfc, requestModel.FechaNacimiento, requestModel.UsuarioAgrega);
+            db.ExecStoredProcedure("dbo.sp_ActualizarPersonaFisica", new List<SqlParameter>
+            {
+                new SqlParameter("@IdPersonaFisica", requestModel.idPersonaFisica),
+                new SqlParameter("@Nombre", requestModel.Nombre),
+                new SqlParameter("@ApellidoPaterno", requestModel.ApellidoPaterno),
+                new SqlParameter("@ApellidoMaterno", requestModel.ApellidoMaterno),
+                new SqlParameter("@RFC", requestModel.rfc),
+                new SqlParameter("@FechaNacimiento", requestModel.FechaNacimiento),
+                new SqlParameter("@UsuarioAgrega", requestModel.UsuarioAgrega)
+            });
             grm.Success = true;
-            grm.Message = string.Empty;
+            grm.Message = "Persona física actualizada exitosamente.";
         }
         catch (Exception ex)
         {
@@ -91,16 +105,19 @@ public class PersonaFisica : ControllerBase
         return Ok(grm);
     }
 
-    [HttpDelete]
-    [Route("EliminarPersonaFisica")]
-    public IActionResult EliminarPersonaFisica([FromBody] PersonaFisicaModel requestModel)
+    [HttpDelete("EliminarPersonaFisica/{id}")]
+    public IActionResult EliminarPersonaFisica(int id)
     {
         var grm = new GenericResponseModel();
 
         try
         {
-            grm.Data = db.GetDataTable("dbo.sp_EliminarPersonaFisica", requestModel.idPersonaFisica);
-            grm.Message = string.Empty;
+            db.ExecStoredProcedure("dbo.sp_EliminarPersonaFisica", new List<SqlParameter>
+                {
+                    new SqlParameter("@IdPersonaFisica", id)
+                });
+            grm.Success = true;
+            grm.Message = "Persona física eliminada exitosamente.";
         }
         catch (Exception ex)
         {

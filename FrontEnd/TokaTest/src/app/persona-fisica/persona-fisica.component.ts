@@ -12,6 +12,9 @@ import { ColDef,ColGroupDef,GridApi, GridReadyEvent,SideBarDef,CellEditingStarte
 })
 export class PersonaFisicaComponent {
 
+  
+  //nombre:string;
+  
   FData!: GridReadyEvent<IOlympicData>
   private gridApi!: GridApi<IOlympicData>;
   public rowData!: IOlympicData[];
@@ -21,9 +24,7 @@ export class PersonaFisicaComponent {
     minWidth: 300,
     resizable: true,
     enableValue: true,
-    //enablePivot: true,
     sortable: true,
-    //enableRowGroup: true,
 
     filter: true,
     floatingFilter: true
@@ -52,7 +53,7 @@ export class PersonaFisicaComponent {
     params.api.setFilterModel(null);
     this.FData = params;
     this.gridApi = params.api;
-    let url = "http://localhost:5128/api/ObtenerPersonasFisicas";
+    let url = "http://localhost:5128/api/PersonaFisica/ObtenerPersonasFisicas";
     this.http.get<any>(url).subscribe((result) => {
         console.log("Persona Fisica: ", result);
         if (result.success == true) {
@@ -70,7 +71,7 @@ export class PersonaFisicaComponent {
   EliminarPersonaFisica(idPF:any){
     let confirmation = confirm('Esta seguro de esta acción?');
     if(confirmation){
-      let url = "http://localhost:5128/api/EliminarPersonaFisica";
+      let url = "http://localhost:5128/api/PersonaFisica/";
       this.http.delete<any>(url).subscribe((result) => {
           console.log("Persona Fisica: ", result);
           if (result.success == true) {
