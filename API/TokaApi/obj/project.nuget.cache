@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Tg2+sHDja4WsKmINMCEAsO6QUQuEe7cmCwpsl2+blAA2K6BLzRmjWJqS3PQ5VMAPO14MT7QsHFnnE/9XMNd9bg==",
+  "dgSpecHash": "RAQ04cXisEJd16s483PbI1cUTl0MBV+acbO50Fq12SzysKie2hESxnd2fNhf20VPX5Tg1jDcA6tqLqf0yDRspw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Omega\\Desktop\\Toka_Test\\TEST_DEV_LFMO_19072024\\API\\TokaApi\\TokaApi.csproj",
   "expectedPackageFiles": [
@@ -18,7 +18,7 @@
     "C:\\Users\\Omega\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.4.0\\swashbuckle.aspnetcore.swagger.6.4.0.nupkg.sha512",
     "C:\\Users\\Omega\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.4.0\\swashbuckle.aspnetcore.swaggergen.6.4.0.nupkg.sha512",
     "C:\\Users\\Omega\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.4.0\\swashbuckle.aspnetcore.swaggerui.6.4.0.nupkg.sha512",
-    "C:\\Users\\Omega\\.nuget\\packages\\system.data.sqlclient\\4.8.3\\system.data.sqlclient.4.8.3.nupkg.sha512",
+    "C:\\Users\\Omega\\.nuget\\packages\\system.data.sqlclient\\4.8.6\\system.data.sqlclient.4.8.6.nupkg.sha512",
     "C:\\Users\\Omega\\.nuget\\packages\\system.security.accesscontrol\\4.7.0\\system.security.accesscontrol.4.7.0.nupkg.sha512",
     "C:\\Users\\Omega\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512"
   ],

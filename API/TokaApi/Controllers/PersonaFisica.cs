@@ -8,7 +8,8 @@ namespace TokaApi.Controllers;
 [Route("api/[controller]")]
 public class PersonaFisica : ControllerBase
 {
-    SQLHandler db = new Util.SQLHandler();
+    
+    Util.SQLHandler db = new Util.SQLHandler("Default");
 
     public PersonaFisica(){
         db.SetConnectionStringFromAppSettingsFile("Default");
@@ -23,7 +24,7 @@ public class PersonaFisica : ControllerBase
 
         try
         {
-            grm.Data = db.GetDataTable("dbo.sp_AgregarPersonaFisica",requestModel.Nombre, requestModel.ApellidoPaterno, requestModel.);
+            grm.Data = db.GetDataTable("dbo.sp_AgregarPersonaFisica",requestModel.Nombre, requestModel.ApellidoPaterno);
             grm.Success = true;
             grm.Message = string.Empty;
         }
