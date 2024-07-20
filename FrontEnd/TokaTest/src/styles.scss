@@ -1,0 +1,19 @@
+@import 'bootstrap/scss/bootstrap';
+
+.BMaster {
+    width: 100%;
+    margin: auto;
+    display: block;
+    height: calc(100% - 10px) !important;
+    position: absolute;
+}
+
+.MBody {
+    display: block;
+    height: calc(100% - 3px) !important;
+    background: rgb(250, 249, 249, 0.95);
+    width: 100%;
+    margin: auto;
+    overflow-y: hidden;
+    margin-top: 8px;
+}
