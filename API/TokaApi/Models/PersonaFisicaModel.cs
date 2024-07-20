@@ -1,6 +1,6 @@
 namespace TokaApi.Models
 {
-    public class PersonaFisica
+    public class PersonaFisicaModel
     {
         public string? fechaActializacion {get; set;}
         public string? Nombre {get; set;}

@@ -1,0 +1,7 @@
+C:\Users\Omega\Desktop\Toka_Test\TEST_DEV_LFMO_19072024\API\TokaApi\obj\Debug\net7.0\TokaApi.csproj.AssemblyReference.cache
+C:\Users\Omega\Desktop\Toka_Test\TEST_DEV_LFMO_19072024\API\TokaApi\obj\Debug\net7.0\TokaApi.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Omega\Desktop\Toka_Test\TEST_DEV_LFMO_19072024\API\TokaApi\obj\Debug\net7.0\TokaApi.AssemblyInfoInputs.cache
+C:\Users\Omega\Desktop\Toka_Test\TEST_DEV_LFMO_19072024\API\TokaApi\obj\Debug\net7.0\TokaApi.AssemblyInfo.cs
+C:\Users\Omega\Desktop\Toka_Test\TEST_DEV_LFMO_19072024\API\TokaApi\obj\Debug\net7.0\TokaApi.csproj.CoreCompileInputs.cache
+C:\Users\Omega\Desktop\Toka_Test\TEST_DEV_LFMO_19072024\API\TokaApi\obj\Debug\net7.0\TokaApi.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Omega\Desktop\Toka_Test\TEST_DEV_LFMO_19072024\API\TokaApi\obj\Debug\net7.0\TokaApi.MvcApplicationPartsAssemblyInfo.cache

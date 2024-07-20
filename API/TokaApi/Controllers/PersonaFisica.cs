@@ -1,10 +1,11 @@
 using Microsoft.AspNetCore.Mvc;
 using TokaApi.Models;
+using System.Data;
 
 namespace TokaApi.Controllers;
 
 [ApiController]
-[Route("[controller]")]
+[Route("api/[controller]")]
 public class PersonaFisica : ControllerBase
 {
     SQLHandler db = new Util.SQLHandler();
@@ -15,14 +16,14 @@ public class PersonaFisica : ControllerBase
    
 
     [HttpPost]
-    [Route("InsertPersonaFisica")]
-    public IActionResult GetMacroTable([FromBody] CaducosModel requestModel)
+    [Route("RegistrarPersonaFisica")]
+    public IActionResult GetMacroTable([FromBody] PersonaFisicaModel requestModel)
     {
         var grm = new GenericResponseModel();
 
         try
         {
-            grm.Data = db.GetDataTable("dbo.up_getMacroTable",requestModel.PK);
+            grm.Data = db.GetDataTable("dbo.sp_AgregarPersonaFisica",requestModel.Nombre, requestModel.ApellidoPaterno, requestModel.);
             grm.Success = true;
             grm.Message = string.Empty;
         }
