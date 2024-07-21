@@ -1,7 +1,7 @@
 <app-header></app-header>
 <div class="row">
-    <div class="col">
-      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+    <div class="col" style="margin-left: 2%; margin-bottom: 3px;">
+      <button id="PfButton" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
         Agregar Persona Física 
       </button>
     </div>
@@ -34,20 +34,20 @@
                   <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
                     <div class="card-body p-4 p-md-5">
                       <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Persona Fisica</h3>
-                      <form>
+                      
                         <div class="row">
                           <div class="col-md-6 mb-4">
         
                             <div data-mdb-input-init class="form-outline">
-                              <input type="text" id="firstName" class="form-control form-control-lg" />
-                              <label class="form-label" for="firstName" >Nombre</label>
+                              <input type="text" id="firstName" class="form-control form-control-lg" [(ngModel)]="nombre" />
+                              <label class="form-label" for="firstName">Nombre</label>
                             </div>
           
                           </div>
                           <div class="col-md-6 mb-4">
           
                             <div data-mdb-input-init class="form-outline">
-                              <input type="text" id="lastName" class="form-control form-control-lg" />
+                              <input type="text" id="lastName" class="form-control form-control-lg" [(ngModel)]="apellidoPaterno"/>
                               <label class="form-label" for="lastName">Apellido Paterno</label>
                             </div>
           
@@ -57,7 +57,7 @@
                           <div class="col-md-6 mb-4 d-flex align-items-center">
                             
                             <div data-mdb-input-init class="form-outline">
-                              <input type="text" id="lastName" class="form-control form-control-lg" />
+                              <input type="text" id="lastName" class="form-control form-control-lg" [(ngModel)]="apellidoMaterno"/>
                               <label class="form-label" for="lastName">Apellido Materno</label>
                             </div>
                             
@@ -65,7 +65,7 @@
                           <div class="col-md-6 mb-4">
                             
                             <div data-mdb-input-init class="form-outline datepicker w-100">
-                              <input type="date" class="form-control form-control-lg" id="birthdayDate" />
+                              <input type="date" class="form-control form-control-lg" id="birthdayDate" [(ngModel)]="fechaNacimiento"/>
                               <label for="birthdayDate" class="form-label">Fecha de nacimiento</label>
                             </div>
                             
@@ -75,13 +75,13 @@
                           <div class="col-md-12 mb-4 pb-2">
           
                             <div data-mdb-input-init class="form-outline">
-                              <input type="email" id="emailAddress" class="form-control form-control-lg" />
+                              <input type="email" id="emailAddress" class="form-control form-control-lg" [(ngModel)]="rfc"/>
                               <label class="form-label" for="emailAddress">RFC</label>
                             </div>
           
                           </div>
                         </div>
-                      </form>
+                      
                     </div>
                   </div>
                 </div>
@@ -92,7 +92,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" (click)="ActionPersonaFisica(action)">Save</button>
+        <button id="registroButton" type="button" class="btn btn-primary" (click)="ActionPersonaFisica(action)">Save</button>
       </div>
     </div>
   </div>

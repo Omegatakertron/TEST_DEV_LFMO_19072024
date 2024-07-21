@@ -9,6 +9,7 @@ import { ReportesComponent } from './reportes/reportes.component';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { AgGridAngular } from 'ag-grid-angular';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { AgGridAngular } from 'ag-grid-angular';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    AgGridAngular
+    AgGridAngular,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

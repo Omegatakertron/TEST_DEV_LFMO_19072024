@@ -72,8 +72,8 @@ public class PersonaFisica : ControllerBase
         return Ok(grm);
     }
 
-    [HttpPut("ActualizarPersonaFisica")]
-    public IActionResult ActualizarPersonaFisica([FromBody] PersonaFisicaModel requestModel)
+    [HttpPut("ActualizarPersonaFisica/{id}")]
+    public IActionResult ActualizarPersonaFisica(int id, [FromBody] PersonaFisicaModel requestModel)
     {
         var grm = new GenericResponseModel();
 
@@ -81,7 +81,7 @@ public class PersonaFisica : ControllerBase
         {
             db.ExecStoredProcedure("dbo.sp_ActualizarPersonaFisica", new List<SqlParameter>
             {
-                new SqlParameter("@IdPersonaFisica", requestModel.idPersonaFisica),
+                new SqlParameter("@IdPersonaFisica", id),
                 new SqlParameter("@Nombre", requestModel.Nombre),
                 new SqlParameter("@ApellidoPaterno", requestModel.ApellidoPaterno),
                 new SqlParameter("@ApellidoMaterno", requestModel.ApellidoMaterno),
@@ -105,7 +105,7 @@ public class PersonaFisica : ControllerBase
         return Ok(grm);
     }
 
-    [HttpDelete("EliminarPersonaFisica/{id}")]
+    [HttpDelete("EliminarPersonaFisica{id}")]
     public IActionResult EliminarPersonaFisica(int id)
     {
         var grm = new GenericResponseModel();
