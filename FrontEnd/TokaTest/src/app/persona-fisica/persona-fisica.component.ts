@@ -63,7 +63,7 @@ export class PersonaFisicaComponent {
     params.api.setFilterModel(null);
     this.FData = params;
     this.gridApi = params.api;
-    let url = "http://localhost:5128/api/PersonaFisica/ObtenerPersonasFisicas";
+    let url = "http://localhost:5147/api/PersonaFisica/ObtenerPersonasFisicas";
     this.http.get<any>(url).subscribe((result) => {
         console.log("Persona Fisica: ", result);
         if (result.success == true) {
@@ -100,7 +100,14 @@ export class PersonaFisicaComponent {
   EliminarPersonaFisica(idPF:any){
     let confirmation = confirm('Esta seguro de esta acción?');
     if(confirmation){
-    
+      let url = "http://localhost:5128/api/PersonaFisica/ActualizarPersonaFisica/{id}";
+      const headers = new HttpHeaders({'Content-Type': 'application/json' })
+      this.http.delete(url,).subscribe((result) => {
+          console.log("Persona Fisica: ", result);
+          if (result) {
+            this.onGridReady(this.FData);
+          }
+        });
     }
     else{
 
@@ -112,7 +119,7 @@ export class PersonaFisicaComponent {
       if(this.nombre != '' && this.apellidoPaterno != '' && this.apellidoPaterno != '' && this.fechaNacimiento != '' && this.rfc != ''){
         let confirmation = confirm('Desea añadir el registro?');
         if(confirmation){
-        let url = "http://localhost:5128/api/PersonaFisica/RegistrarPersonaFisica";
+        let url = "http://localhost:5147/api/PersonaFisica/RegistrarPersonaFisica";
         this.http.post<any>(url, {Nombre: this.nombre, ApellidoPaterno: this.apellidoPaterno, ApellidoMaterno: this.apellidoMaterno, rfc: this.rfc, FechaNacimiento: this.fechaNacimiento, UsuarioAgrega: sessionStorage.getItem('IdAutenticador')}).subscribe((result) => {
             console.log("Persona Fisica: ", result);
             if (result.success == true) {
