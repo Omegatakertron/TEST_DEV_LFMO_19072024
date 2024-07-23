@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Hv47kFhyameOXMCwefGaGmSdJLPZRCkL+JxKsHJ/gm9SMJpwNc23NMQ7V22bntKmhjEJ1WWmnT2J+zv/SO0RIA==",
+  "dgSpecHash": "d302iv2BXHsQ+oVwIcAJPA5H76JGUf54yUmZ5UkPoIU8dVPqh/ofPC1a+EyH1qjaLooMJP/7aQBeJhrIYY9Qbw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Omega\\Desktop\\toka\\TokaTest\\TokaTest\\TokaTest.csproj",
+  "projectFilePath": "C:\\Users\\Omega\\Desktop\\Toka_Test\\TEST_DEV_LFMO_19072024\\API\\TokaTest\\TokaTest.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Omega\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Omega\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

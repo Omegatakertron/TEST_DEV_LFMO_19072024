@@ -74,11 +74,11 @@ namespace TokaTest.Controllers
                 };
 
                 //_dbContext.Database.ExecuteSqlRaw
-                var message = new SqlParameter("@MENSAJEERROR", SqlDbType.VarChar, 500) { Direction = ParameterDirection.Output };
-                parameters.Append(message);
+                // var message = new SqlParameter("@MENSAJEERROR", SqlDbType.VarChar, 500) { Direction = ParameterDirection.Output };
+                // parameters.Append(message);
                 _dbContext.Database.ExecuteSqlRaw("EXEC dbo.sp_AgregarPersonaFisica @Nombre, @ApellidoPaterno, @ApellidoMaterno, @RFC, @FechaNacimiento, @UsuarioAgrega", parameters);
 
-                return StatusCode(StatusCodes.Status200OK, new { message = message.Value.ToString(), Response = "", success = true });
+                return StatusCode(StatusCodes.Status200OK, new { message = "OK", Response = "", success = true });
 
             }
             catch (Exception ex)

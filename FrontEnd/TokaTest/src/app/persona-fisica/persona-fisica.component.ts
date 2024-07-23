@@ -63,11 +63,11 @@ export class PersonaFisicaComponent {
     params.api.setFilterModel(null);
     this.FData = params;
     this.gridApi = params.api;
-    let url = "http://localhost:5147/api/PersonaFisica/ObtenerPersonasFisicas";
+    let url = "http://localhost:5147/api/PersonaFisica/ObtenerPeronasFisicas";
     this.http.get<any>(url).subscribe((result) => {
-        console.log("Persona Fisica: ", result);
+        console.log("Persona Fisica: ", result.response);
         if (result.success == true) {
-          this.rowData = result.data;
+          this.rowData = result.response;
         }
       });
   }

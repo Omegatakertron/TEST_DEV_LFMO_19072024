@@ -2231,11 +2231,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Omega\\Desktop\\toka\\TokaTest\\TokaTest\\TokaTest.csproj",
+      "projectUniqueName": "C:\\Users\\Omega\\Desktop\\Toka_Test\\TEST_DEV_LFMO_19072024\\API\\TokaTest\\TokaTest.csproj",
       "projectName": "TokaTest",
-      "projectPath": "C:\\Users\\Omega\\Desktop\\toka\\TokaTest\\TokaTest\\TokaTest.csproj",
+      "projectPath": "C:\\Users\\Omega\\Desktop\\Toka_Test\\TEST_DEV_LFMO_19072024\\API\\TokaTest\\TokaTest.csproj",
       "packagesPath": "C:\\Users\\Omega\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Omega\\Desktop\\toka\\TokaTest\\TokaTest\\obj\\",
+      "outputPath": "C:\\Users\\Omega\\Desktop\\Toka_Test\\TEST_DEV_LFMO_19072024\\API\\TokaTest\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
